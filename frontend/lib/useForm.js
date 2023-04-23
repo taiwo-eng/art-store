@@ -26,9 +26,6 @@ import { useState } from "react";
         setInputs(blankState)
     }
 
-    function handleSubmit (e) {
 
-    }
-
-    return {inputs, handleChange, resetForm, clearForm, handleSubmit}
+    return {inputs, handleChange, resetForm, clearForm}
  }
