@@ -1,7 +1,3 @@
-export default function HomePage() {
-  return (
-    <div>
-      <p>Hello HomePage!</p>
-    </div>
-  );
-}
+import ProductsPage from "./products";
+
+export default ProductsPage;
