@@ -2,6 +2,7 @@ import useForm from "../lib/useForm"
 import Form from './styles/Form';
 import gql from 'graphql-tag';
 import {useMutation} from '@apollo/client';
+import Router from 'next/router';
 import DisplayError from "./ErrorMessage";
 import { ALL_PRODUCTS_QUERY } from "./Products";
 
@@ -49,9 +50,10 @@ export default function CreateProduct () {
             e.preventDefault()
             const res = await createProduct();
             clearForm();
+            Router.push(`/product/${res.data.createProduct.id}`)
         }}>
             <DisplayError error={error} />
-            <fieldset disabled={loading} aria-aria-busy={loading}>
+            <fieldset disabled={loading} aria-busy={loading}>
             <label htmlFor="image">
                     Image
                     <input required type="file" id="image" name="image" onChange={handleChange} />

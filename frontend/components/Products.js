@@ -23,7 +23,7 @@ export const ALL_PRODUCTS_QUERY = gql`
 export default function Products () {
     const {data, error, loading} = useQuery(ALL_PRODUCTS_QUERY);
     if (loading) return <p>Loading.....</p>
-    if (error) return <p>{error.message}</p>
+    if (error) return <p>{error}</p>
     return (
         <div>
             <ProductListStyles>
